@@ -10,12 +10,22 @@ public class Main {
       list.addFirst(20);
       list.addFirst(10);
       list.addFirst(5);
+      list.addFirst(3);
+      list.addFirst(2);
+      list.addFirst(1);
 
-      list.reverse();
-      Arrays.toString(list.toArray());
-      System.out.println(Arrays.toString(list.toArray()));
+      list.getKthFromTheEnd(2 );
+
+
+      //list.reverse();
+      //Arrays.toString(list.toArray());
+      //System.out.println(Arrays.toString(list.toArray()));
       //reverses list in place
-//      System.out.println(Arrays.toString(list.reverse().toArray()));
+      //System.out.println(Arrays.toString(list.reverse().toArray()));
+
+
+
+
 
     }
 }
