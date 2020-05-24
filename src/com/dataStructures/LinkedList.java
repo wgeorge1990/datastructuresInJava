@@ -208,19 +208,30 @@ public class LinkedList {
         // in the middle of the list.
         // if the size based on index created is even then the middle
         // will be the slow pointer node and the node previous of that one
-        var fast = first;
-        var slow = first;
-        while(slow != null){
-            if(fast.next == null) break;
-            fast = fast.next;
-            if(fast.next == null) break;
-            fast = fast.next;
-            slow = slow.next;
+
+        // original
+//        var fast = first;
+//        var slow = first;
+//        while(slow != null){
+//            if(fast.next == null) break;
+//            fast = fast.next;
+//            if(fast.next == null) break;
+//            fast = fast.next;
+//            slow = slow.next;
+//        }
+//        System.out.println(slow.value);
+
+        // refactored
+        var a = first;
+        var b = first;
+        while (b != last && b.next != last){
+            b = b.next.next;
+            a = a.next.next;
         }
-        System.out.println(slow.value);
-
-
-
+        if (b == last)
+            System.out.println(a.value);
+        else
+            System.out.println(a.value + ", " + a.next.value);
     }
 
 }
