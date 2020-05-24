@@ -10,11 +10,14 @@ public class Main {
       list.addFirst(20);
       list.addFirst(10);
       list.addFirst(5);
+      list.addFirst(4);
       list.addFirst(3);
       list.addFirst(2);
       list.addFirst(1);
 
+
       list.getKthFromTheEnd(2 );
+      list.printMiddle();
 
 
       //list.reverse();

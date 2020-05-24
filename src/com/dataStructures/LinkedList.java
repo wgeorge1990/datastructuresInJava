@@ -177,6 +177,7 @@ public class LinkedList {
 //            throw new IllegalArgumentException();
 //        }
         //if not then:
+        if (isEmpty()) return -1;
 
         var a = first;
         var b = first;
@@ -196,6 +197,29 @@ public class LinkedList {
 
         System.out.println(a.value);
         return a.value;
+
+    }
+
+    public void printMiddle(){
+        // create two pointers fast and slow
+        // if the fast is moving at 2++ per loop
+        // and if slow is moving at exactly 1++ per loop
+        // then when the fast hits the end the slow will be
+        // in the middle of the list.
+        // if the size based on index created is even then the middle
+        // will be the slow pointer node and the node previous of that one
+        var fast = first;
+        var slow = first;
+        while(slow != null){
+            if(fast.next == null) break;
+            fast = fast.next;
+            if(fast.next == null) break;
+            fast = fast.next;
+            slow = slow.next;
+        }
+        System.out.println(slow.value);
+
+
 
     }
 
