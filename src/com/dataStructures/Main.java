@@ -18,7 +18,7 @@ public class Main {
 
       list.getKthFromTheEnd(2 );
       list.printMiddle();
-
+        System.out.println(list.hasLoop());
 
       //list.reverse();
       //Arrays.toString(list.toArray());
@@ -26,6 +26,8 @@ public class Main {
       //reverses list in place
       //System.out.println(Arrays.toString(list.reverse().toArray()));
 
+      var listWithLoop = LinkedList.createWithLoop();
+      System.out.println(listWithLoop.hasLoop());
 
 
 
