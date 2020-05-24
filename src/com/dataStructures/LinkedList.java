@@ -19,6 +19,18 @@ public class LinkedList {
         return first == null;
     }
 
+    public void reverse(){
+        //reverse list in place
+        var reversedList = new LinkedList();
+        var current = first;
+        while (current != null){
+            reversedList.addFirst(current.value);
+            current = current.next;
+        }
+        first = reversedList.first;
+        last = reversedList.last;
+    }
+
     public int indexOf(int item){
         //traverse list from beginning to end
         //as soon as we find matching value and return index
