@@ -3,6 +3,8 @@ package com.dataStructures;
 import java.util.Stack;
 
 public class BalancedExpressions {
+
+    //CLASSIC SOLUTION BASED ON MOST ALGORITHM BOOKS
     public static boolean isBalancedExpression(String expression){
         //solve with stack "((sbdks)[])"
         //iterate string and for each char
@@ -10,12 +12,19 @@ public class BalancedExpressions {
         // if anything else ignore
         Stack<Character> brackets = new Stack<>();
         for (char c: expression.toCharArray()){
-            if(c == '(' ){
+            if(c == '(' || c == '<' || c == '[' || c =='{' ){
                 brackets.push(c);
             }
-            if(c == ')'){
+
+            if(c == ')' || c == '>' || c == ']' || c =='}' ){
                 if(brackets.empty()) return false;
-                brackets.pop();
+                var top = brackets.pop();
+                if (
+                        (c == ')' && top != '(') ||
+                        (c == '>' && top != '<') ||
+                        (c == ']' && top != '[') ||
+                        (c == '}' && top != '{')
+                ) return false;
             }
         }
         return brackets.empty();
