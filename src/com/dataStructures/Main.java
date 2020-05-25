@@ -10,15 +10,16 @@ public class Main {
     stack.push(2);
     stack.push(3);
     stack.push(4);
-    stack.getItems().print();
+    stack.push(5);
+    stack.push(6);
+    stack.push(7);
+    stack.push(8);
+    stack.push(9);
     stack.pop();
-    System.out.println(stack.isEmpty());
-    stack.push(2345);
-    stack.push(11111);
     stack.pop();
-    stack.peek();
-
-
+//    stack.push(3);
+//    System.out.println(stack.getItems());;
+    stack.getBItems();
   }
 
 }
