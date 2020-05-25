@@ -19,7 +19,7 @@ public class Main {
     stack.pop();
 //    stack.push(3);
 //    System.out.println(stack.getItems());;
-    stack.getBItems();
+    System.out.println(stack.toString());
   }
 
 }
