@@ -3,12 +3,14 @@ package com.dataStructures;
 public class Main {
 
   public static void main(String[] args) {
-    System.out.println(BalancedExpressions.isBalancedExpression("(william)"));
-    System.out.println(BalancedExpressions.isBalancedExpression("((william))"));
-    System.out.println(BalancedExpressions.isBalancedExpression("(((william))"));
-    System.out.println(BalancedExpressions.isBalancedExpression(")william)"));
-    System.out.println(BalancedExpressions.isBalancedExpression(")william("));
-    System.out.println(BalancedExpressions.isBalancedExpression("{[[asdfasdf]]}"));
+    BalancedExpressions be = new BalancedExpressions();
+    System.out.println(be.isBalancedExpression("(william)")); //true
+    System.out.println(be.isBalancedExpression("(william)")); //true
+    System.out.println(be.isBalancedExpression("((william))")); //true
+    System.out.println(be.isBalancedExpression("(((william))")); //false
+    System.out.println(be.isBalancedExpression(")william)")); //false
+    System.out.println(be.isBalancedExpression(")william(")); //false
+    System.out.println(be.isBalancedExpression("{[[asdfasdf]]}")); //true
 
   }
 

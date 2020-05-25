@@ -7,37 +7,35 @@ import java.util.Stack;
 
 public class BalancedExpressions {
 
-    private static List<Character> leftBrackets;
-    private static List<Character> rightBrackets;
+    private  List<Character> leftBrackets = Arrays.asList('(', '<', '[', '{');
+    private List<Character> rightBrackets = Arrays.asList(')', '>', ']', '}');
 
     //REFACTORED SOLUTION
-    public static boolean newIsBalancedExpression(){
+    public boolean newIsBalancedExpression(){
 
         return false;
     }
 
-    private static boolean isLeftBracket(char c) {
+    private boolean isLeftBracket(char c) {
         //If you create this way you cant pass args to construcor
 //        ArrayList<Character> leftBrackets = new ArrayList();
-
-        leftBrackets = Arrays.asList('(', '<', '[', '{');
         return leftBrackets.contains(c);
     }
 
-    private static boolean isRightBracket(char c) {
-        rightBrackets = Arrays.asList(')', '>', ']', '}');
+    private boolean isRightBracket(char c) {
         return rightBrackets.contains(c);
     }
 
-    private static boolean bracketsMatch(char left, char right) {
-      return    (right == ')' && left != '(') ||
-                (right == '>' && left != '<') ||
-                (right == ']' && left != '[') ||
-                (right == '}' && left != '{');
+    private boolean bracketsMatch(char left, char right) {
+//      return    (right == ')' && left != '(') ||
+//                (right == '>' && left != '<') ||
+//                (right == ']' && left != '[') ||
+//                (right == '}' && left != '{');
+      return rightBrackets.indexOf(right) != leftBrackets.indexOf(left);
     }
 
     //CLASSIC SOLUTION BASED ON MOST ALGORITHM BOOKS
-    public static boolean isBalancedExpression(String expression){
+    public boolean isBalancedExpression(String expression){
         //solve with stack "((sbdks)[])"
         //iterate string and for each char
         // if (openingBracket) or (closedBracket) push onto stack
