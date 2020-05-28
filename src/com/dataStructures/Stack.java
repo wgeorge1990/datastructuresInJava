@@ -13,6 +13,9 @@ public class Stack {
             System.out.println("Stack is Empty");
         else
             System.out.println(items.atIndex(count - 1));
+    }
+
+    public void bPeek(){
         if (bCount == 0)
             System.out.println("BStack is Empty");
         else
@@ -22,46 +25,52 @@ public class Stack {
     public boolean isEmpty(){
         return count == 0;
     }
+    public boolean isBEmpty(){
+        return bCount == 0;
+    }
 
     public void pop(){
         if (isEmpty()) throw new IllegalStateException();
         count--;
         int removed = items.atIndex(count);
         items.removeAt(count);
+    }
 
+    public void bPop(){
         if (bItems.length == 0) throw new IllegalStateException();
         bCount--;
         int bRemoved = bItems[count];
         bItems[count] = 0;
-
     }
 
     public void push(int item){
             count++;
             items.insert(item);
-
-            var newBItems = new int[count * 2];
-            if (count > bItems.length){
-                for (int i = 0; i < bItems.length; i++){
-                    newBItems[i] = bItems[i];
-                }
-                bItems = newBItems;
-                bItems[count - 1] = item;
-            } else
-                bItems[bCount] = item;
-            bCount++;
     }
 
-    public Array getItems(){
-        return items;
+    public void bPush(int item){
+        var newBItems = new int[count * 2];
+        if (count > bItems.length){
+            for (int i = 0; i < bItems.length; i++){
+                newBItems[i] = bItems[i];
+            }
+            bItems = newBItems;
+            bItems[count - 1] = item;
+        } else
+            bItems[bCount] = item;
+        bCount++;
+    }
+
+    public void print(){
+        for (int i = 0; i < items.length(); i++){
+            System.out.print(bItems[i] + " ");
+        }
     }
 
     @Override
     public String toString(){
-        return Arrays.toString(bItems);
-//        for (int i = 0; i < bItems.length; i++){
-//            System.out.println(bItems[i]);
-//        }
+        var content = Arrays.copyOfRange(bItems, 0, bCount);
+        return Arrays.toString(content);
     }
 
 }
