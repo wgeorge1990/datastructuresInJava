@@ -1,33 +1,25 @@
 package com.dataStructures;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Queue;
-
 public class Main {
-
   public static void main(String[] args) {
-    Queue<Integer> q = new ArrayDeque<>();
-    q.add(1);
-    q.add(2);
-    q.add(3);
-    q.add(4);
-    System.out.println(q);
-    reverse(q);
-  }
-
-  public static void reverse(Queue<Integer> q){
-    //  add // remove // isEmpty
-    //[ 10, 20, 30 ]
-    java.util.Stack<Integer> stack = new java.util.Stack<Integer>();
-
-    while (!q.isEmpty()){
-      stack.push(q.remove());
-    }
-
-    while (!stack.isEmpty())
-      q.add(stack.pop());
-    System.out.println(q.toString());
+    //ArrayQueue (ArrayDeque)
+//    ArrayQueue queue = new ArrayQueue(5);
+//    queue.enqueue(10);
+//    queue.enqueue(20);
+//    queue.enqueue(30);
+//    queue.enqueue(40);
+//    System.out.println(queue.toString());
+      QueueTwoStack qts = new QueueTwoStack();
+      qts.enqueue(1);
+      qts.enqueue(23);
+      qts.enqueue(3425);
+      qts.enqueue(234623251);
+      var first = qts.dequeue();
+      var second = qts.dequeue();
+      System.out.println(first);
+      System.out.println(second);
+      System.out.println(qts.peek());
+      System.out.println(qts.peek());
   }
 
 }
